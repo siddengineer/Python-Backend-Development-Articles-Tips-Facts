@@ -68,7 +68,7 @@ Submit a pull request with clear explanations
 
 | No. |           Article Title           |             Link             |
 |-----|-----------------------------------|------------------------------|
-| 1   |The Real Future of Django After 20 Years — What Changes, What Doesn’t                                   |                              |
+| 1   |The Real Future of Django After 20 Years — What Changes, What Doesn’t                 https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/%E2%80%9CThe%20Real%20Future%20of%20Django%20After%2020%20Years%20%E2%80%94%20What%20Changes%2C%20What%20Doesn%E2%80%99t%E2%80%9D%20                  |                              |
 | 2   |                                   |                              |
 | 3   |                                   |                              |
 | 4   |                                   |                              |
