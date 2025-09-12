@@ -66,14 +66,3 @@ Create a new branch for your feature or article
 
 Submit a pull request with clear explanations
 
-Resources
-
-Official Python Documentation
-
-Flask
-
-Django
-
-FastAPI
-
-SQLAlchemy
