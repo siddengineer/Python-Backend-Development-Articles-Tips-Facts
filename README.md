@@ -72,7 +72,7 @@ Submit a pull request with clear explanations
 | 2   |https://www.infoworld.com/article/3712736/highlights-from-the-django-developer-survey-2024.html                     |                              |
 | 3   |https://blog.jetbrains.com/pycharm/2024/06/the-state-of-django/?utm_source=chatgpt.com                      |                              |
 | 4   |https://thedevnews.com/the-state-of-django-2024/?utm_source=chatgpt.com                                   |                              |
-| 5   |                                   |                              |
+| 5   |DJANGO VS LARAVEL https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/DJANGO%20VS%20LARAVEL                                  |                              |
 | 6   |                                   |                              |
 | 7   |                                   |                              |
 | 8   |                                   |                              |
