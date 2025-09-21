@@ -69,9 +69,9 @@ Submit a pull request with clear explanations
 | No. |           Article Title           |             Link             |
 |-----|-----------------------------------|------------------------------|
 | 1   |The Real Future of Django After 20 Years — What Changes, What Doesn’t                 https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/%E2%80%9CThe%20Real%20Future%20of%20Django%20After%2020%20Years%20%E2%80%94%20What%20Changes%2C%20What%20Doesn%E2%80%99t%E2%80%9D%20                  |                              |
-| 2   |                                   |                              |
-| 3   |                                   |                              |
-| 4   |                                   |                              |
+| 2   |https://www.infoworld.com/article/3712736/highlights-from-the-django-developer-survey-2024.html                     |                              |
+| 3   |https://blog.jetbrains.com/pycharm/2024/06/the-state-of-django/?utm_source=chatgpt.com                      |                              |
+| 4   |https://thedevnews.com/the-state-of-django-2024/?utm_source=chatgpt.com                                   |                              |
 | 5   |                                   |                              |
 | 6   |                                   |                              |
 | 7   |                                   |                              |
