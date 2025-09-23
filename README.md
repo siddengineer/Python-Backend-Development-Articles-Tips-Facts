@@ -74,7 +74,7 @@ Submit a pull request with clear explanations
 | 4   |https://thedevnews.com/the-state-of-django-2024/?utm_source=chatgpt.com                                   |                              |
 | 5   |DJANGO VS LARAVEL https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/DJANGO%20VS%20LARAVEL                                  |                              |
 | 6   |DJANGO ECOSYSTEM https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Django%E2%80%99s%20Official%20Ecosystem                          |                              |
-| 7   |🛡 Rate-Limiting Like a Rockstar: Protecting Your Django App from DoS Attacks (Without Losing Your Cool)                                   |                              |
+| 7   |🛡 Rate-Limiting Like a Rockstar: Protecting Your Django App from DoS Attacks (Without Losing Your Cool) https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/%F0%9F%9B%A1%20Rate-Limiting%20Like%20a%20Rockstar%3A%20Protecting%20Your%20Django%20App%20from%20DoS%20Attacks%20(Without%20Losing%20Your%20Cool)                                   |                              |
 | 8   |                                   |                              |
 | 9   |                                   |                              |
 | 10  |                                   |                              |
