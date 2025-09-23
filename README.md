@@ -76,7 +76,7 @@ Submit a pull request with clear explanations
 | 6   |DJANGO ECOSYSTEM https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Django%E2%80%99s%20Official%20Ecosystem                          |                              |
 | 7   |🛡 Rate-Limiting Like a Rockstar: Protecting Your Django App from DoS Attacks (Without Losing Your Cool) https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/%F0%9F%9B%A1%20Rate-Limiting%20Like%20a%20Rockstar%3A%20Protecting%20Your%20Django%20App%20from%20DoS%20Attacks%20(Without%20Losing%20Your%20Cool)                                   |                              |
 | 8   |Django Multi-Tenancy at Scale: Beyond Basic SaaS Patternshttps://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Django%20Multi-Tenancy%20at%20Scale%3A%20Beyond%20Basic%20SaaS%20Patterns                             |                              |
-| 9   |                                   |                              |
+| 9   | Django 6.0 |                              |
 | 10  |                                   |                              |
 | 11  |                                   |                              |
 | 12  |                                   |                              |
