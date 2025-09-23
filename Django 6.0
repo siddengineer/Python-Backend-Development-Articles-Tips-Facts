@@ -1,0 +1,60 @@
+🔑 Big Things You Should Know
+
+Python Upgrade Needed
+Django 6.0 only works with Python 3.12 or 3.13.
+👉 If you’re on older Python, upgrade before moving to Django 6.0.
+
+Built-in Security (CSP)
+Django now has Content Security Policy (CSP) built in.
+👉 This makes your site safer from attacks like XSS without extra libraries.
+
+Template Partials
+New way to reuse parts of templates easily with {% partialdef %}.
+👉 No need to create many small template files.
+
+Background Tasks in Django
+Django now has its own @task decorator.
+👉 You can run simple tasks in the background (without Celery/RQ).
+But: production still better with Celery for heavy jobs.
+
+Better ORM (Database Queries)
+
+More options in aggregates (order_by, AnyValue, etc.)
+
+JSON fields work better (like negative indexing).
+
+Composite keys supported in more places.
+👉 Queries become more powerful and flexible.
+
+Admin Panel Updates
+
+Uses latest icons (Font Awesome).
+
+Password form easier to customize.
+
+Stronger password hashing.
+👉 Slightly nicer and more secure admin.
+
+⚠️ Things That Might Break
+
+Only Python 3.12+ works – older versions won’t run.
+
+Some database backend methods renamed – custom backends may fail.
+
+Old APIs removed – e.g., get_cache_name() gone.
+
+Defaults changed – auto fields now default to BigAutoField.
+
+Stricter errors – ORM may throw new exceptions (like on failed updates).
+
+✅ What You Should Do
+
+Upgrade Python to 3.12+ now.
+
+Test your code with Django 6.0 in a staging/dev setup.
+
+Check your third-party packages (they must support Django 6.0).
+
+Try new tasks and partials where useful.
+
+Turn on CSP for better security.
