@@ -1,0 +1,84 @@
+🎯 Why You Need Rate Limiting
+
+A DoS (Denial of Service) attack floods your server with too many requests.
+
+Without control, even one malicious script can crash your app.
+
+Rate limiting ensures each user/IP can only send a limited number of requests in a time window.
+
+🪄 Rockstar Ways to Add Rate Limiting in Django
+1. Use Django REST Framework Throttling (if using DRF)
+
+Add throttling in settings.py:
+
+REST_FRAMEWORK = {
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '50/min',   # 50 requests per minute for anonymous users
+        'user': '100/min'   # 100 requests per minute per authenticated user
+    }
+}
+
+
+👉 Great if your app is API-heavy.
+
+2. Django Ratelimit Middleware
+
+Install:
+
+pip install django-ratelimit
+
+
+Usage in views:
+
+from django_ratelimit.decorators import ratelimit
+
+@ratelimit(key='ip', rate='5/m', block=True)
+def my_view(request):
+    return HttpResponse("You're safe, buddy!")
+
+
+👉 Blocks IPs making more than 5 requests per minute.
+
+3. Nginx/Reverse Proxy Level Rate-Limiting
+
+Even before requests hit Django:
+
+limit_req_zone $binary_remote_addr zone=one:10m rate=10r/s;
+server {
+    location / {
+        limit_req zone=one burst=20 nodelay;
+    }
+}
+
+
+👉 Stops traffic floods at the server level. Super-efficient.
+
+4. Redis + Token Bucket
+
+Use Redis as a fast counter.
+
+Store requests per user/IP in Redis.
+
+Apply token bucket or leaky bucket algorithms.
+👉 Best for scaling apps.
+
+5. Cloud-Based Protection (CDN/WAF)
+
+Services like Cloudflare, AWS WAF, Akamai can block abusive traffic before it even touches your server.
+👉 Easy, powerful, but external.
+
+⚡ Rockstar Tips (Without Losing Your Cool)
+
+Always start with reasonable limits (not too strict, not too open).
+
+Log blocked requests → helps in detecting real attackers.
+
+Combine app-level + proxy-level rate limiting for max safety.
+
+Allow some endpoints (like login) to have stricter rules.
+
+Use CAPTCHA or challenge after multiple hits to reduce bot traffic.
