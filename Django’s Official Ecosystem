@@ -1,0 +1,47 @@
+🔹 Core Framework (Official Django)
+
+Django itself – The web framework (ORM, templates, admin, authentication, middleware, etc.).
+
+🔹 Official Django Packages
+
+These are part of the Django Software Foundation’s ecosystem:
+
+Django REST Framework (DRF) – While not part of Django core, it’s considered the de facto standard for building APIs with Django. Widely endorsed and often used alongside Django.
+
+Channels – Adds asynchronous support (WebSockets, chat apps, real-time features).
+
+Django CMS – Content management system built on Django.
+
+Wagtail CMS (not core, but DSF-recognized) – Popular CMS with rich editing experience.
+
+django-filter – For advanced filtering with Django querysets, heavily used in DRF.
+
+django-allauth – Officially recommended for authentication and social login.
+
+🔹 Infrastructure & Tools
+
+Django Debug Toolbar – For debugging queries, templates, and performance issues.
+
+Django Extensions – Extra tools for management commands, model visualization, etc.
+
+Django Storages – Official storage backends (S3, GCP, Azure).
+
+Django Compressor – Helps with static asset optimization.
+
+Django-CKEditor / TinyMCE – Rich text editors recommended by the community.
+
+🔹 Deployment & Operations
+
+Daphne – ASGI server for Django Channels (official).
+
+Gunicorn / uWSGI – WSGI servers commonly used in production.
+
+Whitenoise – Serving static files directly in Django (officially recommended).
+
+🔹 Community & Governance
+
+Django Software Foundation (DSF) – Governs Django, funds sprints, conferences, and long-term support.
+
+DjangoCon conferences – Official events worldwide.
+
+Django Girls – Community-driven workshops supported by DSF.
