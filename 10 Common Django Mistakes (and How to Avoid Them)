@@ -1,0 +1,84 @@
+✅ 10 Common Django Mistakes (and How to Avoid Them)
+1. Hardcoding secrets in settings.py
+
+❌ Mistake: Writing DB passwords, API keys directly in code.
+
+⏳ Wasted Time: Debugging leaks, migrating environments.
+
+✅ Fix: Use environment variables (django-environ or .env files).
+
+2. Using default SQLite in production
+
+❌ Mistake: Running a production app on SQLite.
+
+⏳ Wasted Time: Performance crashes under load.
+
+✅ Fix: Use PostgreSQL/MySQL in production; SQLite only for quick dev/testing.
+
+3. Forgetting database indexing
+
+❌ Mistake: Queries become super slow with large datasets.
+
+⏳ Wasted Time: Hours optimizing queries later.
+
+✅ Fix: Add db_index=True to frequent search fields, use Django Debug Toolbar to analyze queries.
+
+4. Not using select_related and prefetch_related
+
+❌ Mistake: N+1 query problem (thousands of DB hits in loops).
+
+⏳ Wasted Time: Debugging performance issues.
+
+✅ Fix: Use select_related for foreign keys and prefetch_related for many-to-many fields.
+
+5. Ignoring migrations conflicts
+
+❌ Mistake: Multiple developers editing models → broken migrations.
+
+⏳ Wasted Time: Rebuilding DB, losing data.
+
+✅ Fix: Always run makemigrations + migrate carefully, use squashmigrations for cleanup.
+
+6. Blocking the request cycle with heavy tasks
+
+❌ Mistake: Doing email sending, PDF generation, or ML tasks inside views.
+
+⏳ Wasted Time: Requests hang, server crashes.
+
+✅ Fix: Use Celery, RQ, or Django-Q for background jobs.
+
+7. Poor static & media file handling
+
+❌ Mistake: Serving media files directly from Django in production.
+
+⏳ Wasted Time: Slow file serving, broken uploads.
+
+✅ Fix: Use WhiteNoise for static files, S3/Cloud Storage for media.
+
+8. Writing business logic inside views
+
+❌ Mistake: Fat views, messy code, hard to test.
+
+⏳ Wasted Time: Refactoring & debugging later.
+
+✅ Fix: Keep views thin, push logic to models (fat models) or services/helpers.
+
+9. Forgetting to secure Django apps
+
+❌ Mistake: Leaving DEBUG=True in production, weak CSRF/security headers.
+
+⏳ Wasted Time: Fixing hacked apps.
+
+✅ Fix: Always set DEBUG=False, configure ALLOWED_HOSTS, CSRF, XSS protections.
+
+10. Reinventing the wheel
+
+❌ Mistake: Writing your own user authentication, permissions, or admin dashboards.
+
+⏳ Wasted Time: Weeks of unnecessary coding.
+
+✅ Fix: Use Django’s built-in auth system, DRF permissions, Django Admin — they’re robust and extensible.
+
+⚡ Quick Rule:
+If you’re spending hours debugging Django, check first if it’s:
+👉 (1) a DB query issue, (2) a config issue, or (3) reinventing something Django already has.
