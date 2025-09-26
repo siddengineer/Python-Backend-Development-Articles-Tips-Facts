@@ -1,0 +1,122 @@
+ The Most Underrated Features in Django You Probably Don’t Use
+
+1. slugify — Clean URLs Without the Fuss
+
+Turns any string into a neat, URL-friendly slug.
+
+
+---
+
+2. @cached_property — Memoization Magic
+
+Caches expensive computations on an instance, avoids recalculations.
+
+
+---
+
+3. F() Expressions — Database-Level Operations
+
+Update fields without fetching them first. Example:
+
+from django.db.models import F
+Product.objects.update(stock=F('stock') - 1)
+
+✅ No race conditions, efficient SQL.
+
+
+---
+
+4. Q() Objects — Complex Queries Made Simple
+
+Combine queries with AND/OR logic:
+
+from django.db.models import Q
+User.objects.filter(Q(is_active=True) | Q(is_staff=True))
+
+✅ Cleaner than chaining .filter().
+
+
+---
+
+5. Prefetch_related + select_related — Queryset Superpowers
+
+select_related → eager loads foreign keys.
+
+prefetch_related → optimizes many-to-many and reverse lookups.
+✅ Huge performance boost.
+
+
+
+---
+
+6. Exists Subquery — Smarter Filtering
+
+from django.db.models import Exists, OuterRef
+orders = Order.objects.filter(Exists(Payment.objects.filter(order=OuterRef('pk'))))
+
+✅ Checks existence efficiently at DB level.
+
+
+---
+
+7. bulk_create & bulk_update — Mass Operations in One Query
+
+Book.objects.bulk_create([Book(title="A"), Book(title="B")])
+
+✅ Saves time, avoids N+1 inserts.
+
+
+---
+
+8. Case & When — Conditional Queries
+
+from django.db.models import Case, When, Value
+User.objects.annotate(
+    status=Case(
+        When(is_active=True, then=Value('Active')),
+        default=Value('Inactive')
+    )
+)
+
+✅ Conditional SQL inside Django ORM.
+
+
+---
+
+9. signals — Automate Side Effects
+
+E.g., auto-create a profile when a user registers.
+
+from django.db.models.signals import post_save
+
+✅ Event-driven programming inside Django.
+
+
+---
+
+10. validators in Models — Lightweight Validation
+
+Attach regex/email/URL validation directly to model fields.
+
+from django.core.validators import RegexValidator
+phone = models.CharField(validators=[RegexValidator(r'^\d{10}$')])
+
+
+---
+
+11. django.core.cache — One-Line Caching
+
+Backend-agnostic caching (Memcached, Redis, LocMem).
+
+from django.core.cache import cache
+cache.set("key", "value", timeout=60)
+
+
+---
+
+12. @transaction.atomic — Rollback on Errors
+
+Keeps DB consistent when multiple operations depend on each other.
+
+from django.db import transaction
+with transaction.atomic():
