@@ -78,7 +78,7 @@ Submit a pull request with clear explanations
 | 8   |Django Multi-Tenancy at Scale: Beyond Basic SaaS Patterns  https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Django%20Multi-Tenancy%20at%20Scale%3A%20Beyond%20Basic%20SaaS%20Patterns                             |                              |
 | 9   | Django 6.0 https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Django%206.0                              |
 | 10  | 10 Common Django Mistakes   https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/10%20Common%20Django%20Mistakes%20(and%20How%20to%20Avoid%20Them)                               |                              |
-| 11  |                                   |                              |
+| 11  |The Most Underrated Features in Django You Probably Don’t Use                                 |                              |
 | 12  |                                   |                              |
 | 13  |                                   |                              |
 | 14  |                                   |                              |
