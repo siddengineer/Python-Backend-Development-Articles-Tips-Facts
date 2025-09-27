@@ -1,0 +1,71 @@
+🔎 Why Queries Get Slow
+
+When a table grows (like 3 GB+), queries can drag if:
+
+You’re filtering (WHERE) on non-indexed columns → database scans the entire table.
+
+You’re joining on columns without indexes.
+
+You’re ordering (ORDER BY) without a matching index.
+
+You’re querying composite conditions (e.g., WHERE status='active' AND created_at > ...) without a composite index.
+
+⚡ What Fixed It (Adding 3 Indexes)
+
+Here’s how adding the right indexes cut the query time:
+
+1. Filter Column Index
+
+If you often query:
+
+SELECT * FROM orders WHERE status = 'shipped';
+
+
+Indexing status (a B-Tree index) makes lookups instant instead of scanning millions of rows.
+
+class Order(models.Model):
+    status = models.CharField(max_length=20, db_index=True)
+
+2. Date/Time Index (Range Queries)
+
+For queries like:
+
+SELECT * FROM orders WHERE created_at >= '2025-01-01';
+
+
+A B-Tree index on created_at speeds up filtering by date ranges.
+
+class Order(models.Model):
+    created_at = models.DateTimeField(db_index=True)
+
+3. Composite Index (Multiple Columns Together)
+
+If you query:
+
+SELECT * FROM orders 
+WHERE status = 'shipped' AND created_at >= '2025-01-01'
+ORDER BY created_at DESC;
+
+
+A composite index (status, created_at) means the database can filter + sort in one go.
+
+class Meta:
+    indexes = [
+        models.Index(fields=["status", "created_at"]),
+    ]
+
+📉 Results
+
+Before indexes → full table scan (reading all 3 GB, ~12s).
+
+After indexes → direct B-Tree lookups (~200ms).
+
+🛠 Pro Tips
+
+Always run EXPLAIN ANALYZE <query> in PostgreSQL/MySQL to see if it’s doing a Seq Scan (bad) or Index Scan (good).
+
+Don’t just add indexes randomly → they take disk space and slow down writes.
+
+Add indexes based on your actual queries (from logs or django-debug-toolbar).
+
+Django migrations will create the indexes automatically once defined in models.
