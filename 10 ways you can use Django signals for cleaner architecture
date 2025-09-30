@@ -1,0 +1,42 @@
+1. Keep Business Logic Out of Views
+
+Instead of writing complex logic directly in views, trigger signals when events happen (e.g., "order_created") and let receivers handle side effects like sending confirmation emails.
+
+2. Decouple Side Effects from Core Actions
+
+Example: When a new user registers, the view should only handle saving the user. Signals can handle profile creation, sending welcome mail, and analytics logging separately.
+
+3. Centralize Notifications
+
+Use signals to send in-app or email notifications when certain model events occur (like comment added, order shipped) instead of scattering notification code across views and models.
+
+4. Audit Logging
+
+Hook into post_save or post_delete signals to record changes in an audit trail. Keeps audit logic clean and separate.
+
+5. Cache Invalidation
+
+Automatically clear or refresh cache when a model instance is updated or deleted. Example: invalidate product cache when its price changes.
+
+6. Automated Related Model Updates
+
+When saving an object, use a signal to update related models without mixing logic into save() methods. Example: Update total order value when an item is added.
+
+7. Analytics and Tracking
+
+Instead of cluttering business logic with tracking events, send a signal (e.g., purchase_completed) and let receivers log events to analytics services.
+
+8. Background Task Triggers
+
+Trigger Celery or Django background tasks from signals. Example: After uploading a file, send a signal to queue a background job for processing.
+
+9. Security and Compliance Checks
+
+Use signals to enforce business rules (e.g., deny deletion of certain objects) or log access for compliance. Keeps validation concerns modular.
+
+10. Dynamic System Extensibility
+
+Third-party apps or plugins can subscribe to your app’s signals to extend functionality without modifying core code. Example: Marketplace apps reacting to "payment_received".
+
+✅ Key Benefit:
+Signals promote separation of concerns, keeping your views, models, and utilities cleaner, while making your architecture more extensible and maintainable.
