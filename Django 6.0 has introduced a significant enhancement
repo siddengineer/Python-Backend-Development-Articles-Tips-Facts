@@ -1,0 +1,46 @@
+Django 6.0 has introduced a significant enhancement: a built-in background task framework that simplifies handling asynchronous operations like sending emails, processing files, or interacting with external APIs. This native support reduces the need for external libraries such as Celery, RQ, or Huey, making it more accessible for developers to implement background tasks.
+
+🔧 How It Works
+
+The new framework introduces the @task decorator from django.tasks, allowing you to define background tasks as simple Python functions:
+
+from django.tasks import task
+from django.core.mail import send_mail
+
+@task(queue_name="emails", priority=1)
+def send_welcome_email(emails, subject, message):
+    return send_mail(subject, message, None, emails)
+
+
+Once defined, you can enqueue tasks like so:
+
+send_welcome_email.enqueue(
+    emails=["user@example.com"],
+    subject="Welcome!",
+    message="Thanks for signing up"
+)
+
+
+Under the hood, Django does not provide a built-in worker mechanism; instead, it requires external infrastructure to execute tasks. You can configure the task backend using the TASKS setting in your Django settings file. Django includes two built-in backends for development and testing: ImmediateBackend, which runs tasks immediately, and DummyBackend, which simulates task execution without actually running them. For production environments, you'll need to implement or integrate a worker process to handle the actual execution of tasks. 
+Django Project
+
+⚠️ Limitations
+
+While this built-in feature is a step forward, it's currently more suitable for lightweight tasks. It lacks advanced features found in dedicated task queues like Celery, such as retries, scheduling, or complex workflows. For more robust task management, you might still prefer using Celery or other specialized libraries. 
+Reddit
+
+✅ When to Use It
+
+Consider using Django's built-in background tasks for:
+
+Sending confirmation or welcome emails
+
+Processing uploaded files (e.g., resizing images)
+
+Scheduling periodic notifications
+
+Syncing with third-party APIs
+
+For more complex workflows or enterprise-level applications requiring advanced task management, integrating Celery or a similar tool might be more appropriate.
+
+This new feature marks a significant improvement in Django's capabilities, streamlining the development process for background tasks and enhancing the overall developer experience.
