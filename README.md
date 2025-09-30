@@ -79,8 +79,8 @@ Submit a pull request with clear explanations
 | 9   | Django 6.0 https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Django%206.0                              |
 | 10  | 10 Common Django Mistakes   https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/10%20Common%20Django%20Mistakes%20(and%20How%20to%20Avoid%20Them)                               |                              |
 | 11  |The Most Underrated Features in Django You Probably Don’t Use https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/How%20I%20Reduced%20a%203GB%20Django%20Table%20Query%20from%2012s%20to%20200ms%20(With%20Just%203%20Indexes)                                |                              |
-| 12  | Couldn’t Believe How Easy Real-Time Chat Was with Django Channels  https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Couldn%E2%80%99t%20Believe%20How%20Easy%20Real-Time%20Chat%20Was%20with%20Django%20Channels                                |                              |
-| 13  |10 ways you can use Django signals for cleaner architecture      |https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/10%20ways%20you%20can%20use%20Django%20signals%20for%20cleaner%20architecture|
+| 12  | Couldn’t Believe How Easy Real-Time Chat Was with Django Channels  https://github.com/siddengineer/Python-Backend-Development-Articles-Tips-Facts/blob/main/Couldn%E2%80%99t%20Believe%20How%20Easy%20Real-Time%20Chat%20Was%20with%20Django%20Channels                                |                           |
+| 13  |10 ways you can use Django signals for cleaner architecture  |https://github.com/siddengineer/Python-Backend-Development-Articles-Tips Facts/blob/main/10%20ways%20you%20can%20use%20Django%20signals%20for%20cleaner%20architecture|
 | 14  |                                   |                              |
 | 15  |                                   |                              |
 | 16  |                                   |                              |
