@@ -1,0 +1,35 @@
+1. Follow Django’s Project Structure
+
+Stick to Django’s recommended project layout — apps for modularity, settings.py split into dev/staging/prod, and separate files for static/media. It keeps things clean and scalable.
+
+2. Use Virtual Environments
+
+Always isolate your dependencies with venv or pipenv. This avoids version conflicts and makes deployment easier.
+
+3. Keep Secrets Secret
+
+Never hardcode passwords, API keys, or database credentials. Use environment variables or packages like django-environ.
+
+4. Optimize Database Queries
+
+Use select_related and prefetch_related to reduce N+1 queries. Also, index frequently queried fields to boost performance.
+
+5. Write Reusable, Modular Apps
+
+Think in terms of apps not projects. Each app should solve one problem well so you can reuse it in future projects.
+
+6. Test Early, Test Often
+
+Use Django’s built-in test framework (pytest-django if you prefer) to write unit and integration tests. Continuous testing saves debugging headaches later.
+
+7. Secure Your Application
+
+Enable CSRF protection
+
+Use HTTPS in production
+
+Validate user inputs
+
+Keep Django and third-party packages updated
+
+🔥 Bonus: Follow PEP 8 coding standards and use tools like Black or Flake8 to maintain code quality.
