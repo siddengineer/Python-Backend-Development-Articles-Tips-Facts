@@ -1,0 +1,97 @@
+🔥 🕵️‍♂️ The Hidden Cost of Django ORM: When to Go Raw and Why
+
+Let’s uncover the mystery behind Django’s ORM (Object Relational Mapper) — a powerful tool, but not always the fastest one in the room 👇
+
+⚙️ 1. What Django ORM Really Does
+
+Django ORM converts Python objects into SQL queries automatically.
+Example:
+
+users = User.objects.filter(is_active=True)
+
+
+becomes:
+
+SELECT * FROM user WHERE is_active = TRUE;
+
+
+✅ Easy, readable, and database-agnostic.
+❌ But sometimes… it’s too smart for its own good (and too slow for yours).
+
+💸 2. The Hidden Costs of ORM
+
+These are the “silent killers” of performance:
+
+Multiple Queries (N+1 Problem)
+When ORM fetches related data separately:
+
+for user in User.objects.all():
+    print(user.profile.city)
+
+
+👉 Generates one query for users + one for each profile = N+1 queries 😵
+
+Unnecessary Data Loading
+ORM may fetch full rows when you only need one field.
+
+Lack of Query Optimization
+ORM can’t always take advantage of complex joins, subqueries, or database indexes efficiently.
+
+Serialization Overhead
+ORM builds Python objects for every record — adds latency.
+
+🧠 3. When to Stay with ORM
+
+Use ORM when:
+
+You need fast development and clean code.
+
+Queries are simple (CRUD operations, filters).
+
+You’re okay with slight performance trade-offs for clarity.
+
+Example:
+
+Post.objects.filter(is_published=True)
+
+
+Perfect use case ✅
+
+🧩 4. When to Go Raw (Use Raw SQL)
+
+Go raw when:
+
+You need complex joins or subqueries.
+
+Handling large datasets or bulk operations.
+
+Performance matters more than abstraction.
+
+You want database-specific features (e.g., JSONB, FULLTEXT, INDEX HINTS).
+
+Example:
+
+from django.db import connection
+
+with connection.cursor() as cursor:
+    cursor.execute("SELECT name, COUNT(*) FROM users GROUP BY name HAVING COUNT(*) > 1;")
+    result = cursor.fetchall()
+
+⚡ 5. The Middle Ground
+
+You don’t have to choose extremes — try these:
+
+select_related() / prefetch_related() → reduce N+1 queries
+
+only() / defer() → fetch only needed fields
+
+annotate() / values() → optimize aggregations
+
+raw() → mix ORM with raw SQL safely
+
+🧭 Conclusion
+
+💬 “ORM is a great servant, but a terrible master.”
+
+Use Django ORM for development speed and maintainability,
+but when performance becomes critical — drop down to raw SQL and take control.
